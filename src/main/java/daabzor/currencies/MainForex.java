@@ -15,58 +15,75 @@ public class MainForex {
 		String currency = null;
 		
 		
-		while (check == false){
+		while (check == false) {
+			check = true;
 			System.out.println("Enter budget (PLN)");
-			if(in.hasNextInt()){
+			if (in.hasNextInt()) {
 			budget = in.nextInt();
 			
 			} else {
-				System.out.println("Wrong input");
+				System.err.println("Wrong input \n");
 				in.next();
 				continue;
 			}
 			check = true;
-			
 		}
-		
 		check = false;
 		
-		while (check == false){
+		while (check == false) {
+			check = true;
 			System.out.println("Enter transaction (SELL/BUY)");
 			transaction = in.next().toLowerCase().trim();
 			
 			check = StringChecking.isValidTransaction(transaction);
-			if(check == false){
-				System.out.println("Wrong input");
+			if (check == false) {
+				System.err.println("\n Wrong input \n");
 				continue;
 			}
-			check = true;
-			
+			check = true;	
 		}
-		
+		in.nextLine();
 		check = false;
 		
 		while (check == false) {
 			
 			System.out.println("Enter currency you want to " + transaction + " (eg. 100 USD)");
-			in.nextLine();
+			
 			currency = in.nextLine().trim();
 			
 			check = StringChecking.isValidStringCurrency(currency);
 
-			if(check == false) {
-				System.out.println("Wrong input");
+			if (check == false) {
+				System.err.println("Wrong input \n");
 				continue;
-				
+			}
+			
+				String[] name = splittedString(currency);
+				check = StringChecking.isValidCurrencyName(name[1].toUpperCase());				
+			
+			
+			if (check == false) {
+				System.err.println("Wrong currency name \n");
+				System.err.println("Avalieble currencies:");
+				StringChecking.printEnum();
+				System.out.println();
+				System.out.println();
+				continue;
 			}
 			check = true;
+			
 		}
 		
-		Currencies a = new Currencies(transaction, budget, currency);
-		a.setCurrency();
-		a.setRatio();
-		a.result();
+		Currencies change = new Currencies(transaction, budget, currency);
+		change.setCurrency();
+		change.setRatio();
+		change.result();
 	
+	}
+	
+	private static String[] splittedString(String s) {
+		String[] splittedString = s.split(" ");
+		return splittedString;
 	}
 
 }

@@ -1,5 +1,4 @@
 package daabzor.currencies;
-import daabzor.currencies.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

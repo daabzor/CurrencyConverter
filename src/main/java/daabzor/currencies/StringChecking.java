@@ -2,6 +2,37 @@ package daabzor.currencies;
 
 public class StringChecking {
 	
+	enum Currency { 
+		
+		USD("dolara merykañski"), AUD("dolar australijski"), CAD("dolar kanadyjski"), EUR("euro"), HUF("forint"), CHF("frank szwajcarski"), GBP("funt szterling"), JPY("jen"), CZK("korona czeska"), DKK("korona duñska"), NOK("korona norweska"), SEK("korona szwedzka"), XDR("SDR");
+		
+		Currency (String name) {
+			this.name = name;
+		}
+		
+		private String name;
+		
+		public String getName() {
+			return name;
+		}
+		
+	}
+	
+	public static boolean isValidCurrencyName(String name) {
+		for (Currency n : Currency.values()) {
+			if (n.name().equals(name)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static void printEnum() {
+		for (Currency n : Currency.values()) {
+			System.out.print(n + " ");
+		}
+	}
+	
 	public static boolean isValidTransaction(String transaction) {
 		if (transaction.equalsIgnoreCase("buy") || transaction.equalsIgnoreCase("sell")) {
 			return true;

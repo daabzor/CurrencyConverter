@@ -29,7 +29,7 @@ class CurrencyCalculator {
 	private void buyCurrency() {
 		setChangedCurrency();
 		NumberFormat moneyFormater = NumberFormat.getCurrencyInstance();
-		if (changedCurrency <= budget){
+		if (changedCurrency <= budget) {
 			System.out.println("You need to buy currency: " + moneyFormater.format(changedCurrency));
 		} else {
 			System.out.println("It's impossible. You don't have enought money. You need: " + moneyFormater.format(changedCurrency));
