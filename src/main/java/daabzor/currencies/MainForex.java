@@ -1,12 +1,8 @@
 package daabzor.currencies;
-
 import java.io.IOException;
 import java.util.Scanner;
 
-
-
 public class MainForex {
-
 	
 	public static void main(String[] args) throws IOException {
 		@SuppressWarnings("resource")
@@ -19,7 +15,6 @@ public class MainForex {
 		do {
 			System.out.println("Enter your budget(PLN): ");
 			budget = in.nextLine().trim();
-				
 				if (StringChecking.isValidBudget(budget) == false) {
 					checkInput = 1;
 					System.out.println("Wrong input");
@@ -32,7 +27,6 @@ public class MainForex {
 		do {
 			System.out.println("Do you want to buy or sell curency?");
 			transaction = in.nextLine().trim();
-				
 				if (StringChecking.isValidTransaction(transaction) == false) {
 					checkInput = 1;
 					System.out.println("Wrong input");
@@ -45,7 +39,6 @@ public class MainForex {
 		 do {
 			System.out.println("Enter currency you want to " + transaction + " (eg. '1000 USD')");
 			currency = in.nextLine().trim();
-				
 				if (StringChecking.isValidStringCurrency(currency) == false) {
 					checkInput = 1;
 					System.out.println("Wrong input");
@@ -53,8 +46,7 @@ public class MainForex {
 				if (StringChecking.isValidStringCurrency(currency) == true) {
 					checkInput = 0;
 
-					String[] currencyName = splittedString(currency);
-//									
+					String[] currencyName = splittedString(currency);							
 					if (StringChecking.isValidCurrencyName(currencyName[1].toUpperCase()) == false) {
 						checkInput = 1;
 						System.out.println("Wrong currency name");
@@ -65,7 +57,6 @@ public class MainForex {
 				}		
 		} while (checkInput == 1); 
 			checkInput = 0;
-		
 		
 		Currencies change = new Currencies(transaction, stringConvertionToInt(budget), currency);
 		change.setCurrency();
@@ -83,5 +74,4 @@ public class MainForex {
 		int budget;
 		return budget = Integer.parseInt(s);
 	}
-
 }

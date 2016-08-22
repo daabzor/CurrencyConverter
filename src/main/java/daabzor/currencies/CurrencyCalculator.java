@@ -1,5 +1,4 @@
 package daabzor.currencies;
-
 import java.text.NumberFormat;
 
 class CurrencyCalculator {
@@ -36,12 +35,11 @@ class CurrencyCalculator {
 		}
 	}
 	
-	void result(){
+	void result() {
 		if (transaction.equals("sell")) {
 			sellCurrency();
 		} else {
 			buyCurrency();
 		}
 	}
-	
 }

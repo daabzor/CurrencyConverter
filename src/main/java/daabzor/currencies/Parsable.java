@@ -10,10 +10,14 @@ public interface Parsable {
 	void setUrl() throws IOException;
 	
 	String getUrl();
+	
+	
 	/*
 	 * Name of file which have to be save
 	 */	
 	String getFileName();
+	
+	
 	
 	/*
 	 * This method return ArrayList where [i] = should be name of currency, [i+1] = currency buy rate, [i+2] = currency sell rate

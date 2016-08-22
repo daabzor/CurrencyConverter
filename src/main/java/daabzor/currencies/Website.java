@@ -63,6 +63,4 @@ abstract class Website {
 			return error;
 		}
 	}	
-	
-	
 }

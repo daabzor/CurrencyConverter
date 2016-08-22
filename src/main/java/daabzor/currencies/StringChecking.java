@@ -23,6 +23,7 @@ public class StringChecking {
 			System.out.print(n + " ");
 		}
 	}
+	
 	public static boolean isValidBudget(String budget) {
 		int count = 0;
 		
@@ -50,8 +51,6 @@ public class StringChecking {
 		return false;
 	}
 	
-	
-	
 	public static boolean isValidTransaction(String transaction) {
 		if (transaction.equalsIgnoreCase("buy") || transaction.equalsIgnoreCase("sell")) {
 			return true;
@@ -60,7 +59,6 @@ public class StringChecking {
 		}
 	}
 	
-		
 	public static boolean isValidStringCurrency(String currency) {
 		int count = 0;
 		

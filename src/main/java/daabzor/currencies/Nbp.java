@@ -40,7 +40,7 @@ class Nbp extends Website implements Parsable {
 		completeUrl = "http://www.nbp.pl/kursy/xml/" + urlPart + ".xml";
 	}
 	
-	public String getUrl(){
+	public String getUrl() {
 		return completeUrl;
 	}
 
@@ -76,8 +76,7 @@ class Nbp extends Website implements Parsable {
 		ratio = getRatio(getParsedFile(), getTransaction(), getCurrencyName());
 	}
 	
-	public String getRatio(){
+	public String getRatio() {
 		return ratio;
 	}
-	
 }

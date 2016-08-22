@@ -1,7 +1,5 @@
 package daabzor.currencies;
-
 import java.io.IOException;
-
 
  class Currencies {
 	private String transaction;
@@ -50,9 +48,8 @@ import java.io.IOException;
 		return ratio;
 	}
 	
-	void result(){
+	void result() {
 		CurrencyCalculator result = new CurrencyCalculator(getRatio(), getCurrencyValue(), getBudget(), getTransaction());
 		result.result();
-	}
-	
+	}	
 }
