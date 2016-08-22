@@ -18,6 +18,29 @@ public class StringChecking {
 		
 	}
 	
+	public static void printEnum() {
+		for (Currency n : Currency.values()) {
+			System.out.print(n + " ");
+		}
+	}
+	public static boolean isValidBudget(String budget) {
+		int count = 0;
+		
+		if (budget.equals("") || budget == null) {
+			return false;
+		}
+		for (int i = 0; i < budget.length(); i++) {
+			if (Character.isDigit((budget.charAt(i)))) {
+				count++;
+			}
+		}
+		if (count == budget.length()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public static boolean isValidCurrencyName(String name) {
 		for (Currency n : Currency.values()) {
 			if (n.name().equals(name)) {
@@ -27,11 +50,7 @@ public class StringChecking {
 		return false;
 	}
 	
-	public static void printEnum() {
-		for (Currency n : Currency.values()) {
-			System.out.print(n + " ");
-		}
-	}
+	
 	
 	public static boolean isValidTransaction(String transaction) {
 		if (transaction.equalsIgnoreCase("buy") || transaction.equalsIgnoreCase("sell")) {
